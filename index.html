@@ -8,5 +8,21 @@
 </head>
 <body>
     <h1>Drawing Program</h1>
+    <canvas id="imgCanvas" width="600" height="400"></canvas>
+
+    <script>
+        function draw(event) {
+            var canvas = document.getElementById("imgCanvas");
+            var ctx = canvas.getContext("2d");
+            var rect = canvas.getBoundingClientRect();
+            var posX = event.clientX - rect.left;
+            var posY = event.clientY - rect.top;
+
+            ctx.fillStyle = "#aaaaff";
+            ctx.beginPath();
+            ctx.arc(posX,posY, 50, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    </script>
 </body>
 </html>
